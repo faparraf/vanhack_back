@@ -18,5 +18,4 @@ after_success:
   - eval $(aws ecr get-login --region us-east-1) #needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY envvars
   - docker build -t $AWS_ECR .
   - docker tag ${AWS_ECR}:${TRAVIS_COMMIT}
-  - docker push $AWS_ECR:latest
-  - docker push ${AWS_ECR}:${TRAVIS_COMMIT}
+  - docker push ${AWS_ECR}:latest
